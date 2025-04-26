@@ -4,7 +4,7 @@ import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import methodOverride from 'method-override';
 import path from 'path';
-import { connectDB } from "./config/dbConfig.js";
+import connectDB from "./config/dbConfig.js";
 import superheroRoutes from "./routes/superheroRoutes.js";
 import formsSuperhero from "./routes/formulariosRoutes.js"
 
