@@ -1,0 +1,422 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("./images/fondo-superheroes.jpg");
+  height: 100vh; /* 100% de la altura de la ventana gráfica */
+  width: 100vw; /* 100% del ancho de la ventana gráfica */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Escala la imagen para cubrir todo el body */
+  background-position: top center; /* Centra la imagen horizontal y verticalmente */
+  background-attachment: fixed; /* Fija la imagen para que no se desplace */
+}
+
+/* ELEMENTOS DEL HEADER */
+#header-general {
+  position: fixed;
+  top: 0; /* Para fijarlo en la parte superior */
+  left: 0; /* Para fijarlo en la parte izquierda (si ocupa todo el ancho) */
+  width: 100%; /* Para que ocupe todo el ancho de la ventana */
+  z-index: 1000; /* Asegura que el header esté por encima del contenido */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 0, 128, 0.8);
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar .logo {
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 90px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar ul li a img {
+  width: 25px;
+  height: 25px;
+}
+
+/* ELEMENTOS DEL FOOTER */
+footer {
+  text-align: center;
+  padding: 5px;
+  /* background-color: #333; */
+  background-color: rgba(51, 51, 51, 0.7);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.seccion-footer {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ELEMENTOS DEL MAIN */
+/* PAGINA INDEX */
+#seccion-index {
+  margin-top: 105px;
+  padding: 0px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#seccion-index h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  text-decoration: underline;
+}
+
+#seccion-index div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seccion-index article {
+  max-width: 500px;
+  margin-top: 80px;
+  padding: 30px;
+  background-color: rgba(0, 0, 128, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* PAGINA CONTACTO */
+#seccion-contacto {
+  margin-top: 105px;
+  padding: 0px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#seccion-contacto h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  text-decoration: underline;
+}
+
+#seccion-contacto div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seccion-contacto article {
+  max-width: 500px;
+  margin-top: 80px;
+  padding: 30px;
+  background-color: rgba(0, 0, 128, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+#seccion-contacto article a {
+  color: whitesmoke;
+}
+
+/* PAGINA SOBRE NOSOTROS */
+#seccion-nosotros {
+  margin-top: 75px;
+  padding: 0px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#seccion-nosotros h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  text-decoration: underline;
+}
+
+#seccion-nosotros div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#seccion-nosotros article {
+  max-width: 1100px;
+  margin-top: 10px;
+  padding: 10px 30px;
+  background-color: rgba(0, 0, 128, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* PAGINA LISTAR TODO */
+#seccion-lista-superheroes {
+  margin: 75px 0 0 0;
+  padding: 0 30px 45px 30px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#seccion-lista-superheroes h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  text-decoration: underline;
+}
+
+.grid-lista-superheroes {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cards pasen a la siguiente fila */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  padding: 20px; /* Espacio alrededor de la cuadrícula */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  justify-content: space-between; /* Espacio entre las cards */
+  gap: 18px; /* Espacio entre filas y columnas (más consistente) */
+}
+
+.card-lista-superheroes {
+  background-color: rgba(0, 0, 128, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(33.33% - 12px);
+  /*3cardsporfila(100%/3)menoslamitaddelgapacadalado*/
+  margin-bottom: 18px;
+  /*Espacioentrefilas*/
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content-lista-superheroes {
+  padding: 0 35px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.card-content-lista-superheroes h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.card-content-lista-superheroes strong {
+  text-decoration: underline;
+}
+
+.btn-contenedor {
+  padding: 5px 0 15px 0;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.btn-modificar {
+  padding: 5px 30px;
+  background-color: rgba(0, 255, 0, 0.8);
+  color: whitesmoke;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.a-modificar {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.a-modificar:hover {
+  color: aquamarine;
+}
+
+.btn-modificar:hover {
+  background-color: rgba(0, 255, 0, 0.4);
+  color: aquamarine;
+  transition: .3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -ms-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+}
+
+.form-eliminar {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.btn-eliminar {
+  padding: 5px 30px;
+  background-color: rgba(255, 0, 128, 0.8);
+  color: whitesmoke;
+  margin-left: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-eliminar:hover {
+  background-color: rgba(255, 0, 128, 0.4);
+  color: aquamarine;
+  transition: .3s ease-in-out;
+}
+
+/* PAGINA AGREGAR SUPERHEROE */
+#seccion-agregar-superheroes {
+  width: 100vw;
+  margin: 75px 0 0 0;
+  padding: 0 30px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+#seccion-agregar-superheroes h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  text-decoration: underline;
+}
+
+.form-add-superheroe {
+  background-color: rgba(0, 0, 128, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-width: 700px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.add-campo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add-campo label {
+  width: 160px;
+  text-align: end;
+  margin-right: 15px;
+}
+
+.add-campo input,
+.add-campo textarea {
+  padding: 3px 10px;
+}
+
+.btn-add-hero {
+  margin-top: 5px;
+  padding: 6px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+  background-color: darkorchid;
+}
+
+/* PAGINA MODIFICAR SUPERHEROE */
+#seccion-modificar-superheroes {
+  width: 100vw;
+  margin: 75px 0 0 0;
+  padding: 0 30px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+#seccion-modificar-superheroes h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  text-decoration: underline;
+}
+
+.form-modificar-superheroe {
+  background-color: rgba(0, 0, 128, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-width: 700px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.campo-modificar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.campo-modificar label {
+  width: 160px;
+  text-align: end;
+  margin-right: 15px;
+}
+
+.campo-modificar input,
+.campo-modificar textarea {
+  padding: 3px 10px;
+}
+
+.btn-modificar-hero {
+  margin-top: 5px;
+  padding: 6px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+  background-color: darkorchid;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Superheroes</title>
+  </head>
+  <body>
+    <h1>Todos los Superhéroes</h1>
+
+    <div id="cambio">
+      <% if (cambio) { %>
+      <h2>¡Modificación Realizada con Éxito!</h2>
+      <pre><%= JSON.stringify(cambio, null, 2) %></pre>
+      <% } %>
+    </div>
+
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th width="9%">Nombre de Superhéroe</th>
+          <th width="9%">Nombre Real</th>
+          <th width="3%">Edad</th>
+          <th width="8%">Debilidad</th>
+          <th width="8%">Creador</th>
+          <th width="22%">Poderes</th>
+          <th width="22%">Aliados</th>
+          <th width="22%">Enemigos</th>
+          <th width="5%">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% superheroes.forEach((heroe)=> { %>
+        <tr>
+          <td><%= heroe.nombreSuperHeroe %></td>
+          <td><%= heroe.nombreReal %></td>
+          <td style="text-align: center"><%= heroe.edad %></td>
+          <td><%= heroe.debilidad || "N/A" %></td>
+          <td><%= heroe.creador %></td>
+          <td><%= heroe.poderes.join(", ") %></td>
+          <td><%= heroe.aliados.join(" , ") %></td>
+          <td><%= heroe.enemigos.join(" , ") %></td>
+          <td>
+            <button
+              onclick="window.location.href='/api/formularios/heroe-update/<%= heroe._id %>'"
+              style="width: 90px; height: 25px"
+            >
+              Modificar
+            </button>
+            <button
+              class="delete-button"
+              name-hero="<%= heroe.nombreSuperHeroe %>"
+              data-id="<%= heroe._id %>"
+              style="width: 90px; height: 25px"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <br />
+    <button style="width: 200px; height: 30px">
+      <a href="http://localhost:3000/api/formularios/hero-add"
+        >Agregar un nuevo Héroe</a
+      >
+    </button>
+
+    <script>
+      document.querySelectorAll(".delete-button").forEach((button) => {
+        // cambiamos de id a class
+        button.addEventListener("click", async function () {
+          const heroeID = this.getAttribute("data-id"); // this selecciona uno por uno
+          const nameHero = this.getAttribute("name-hero");
+          const eliminarHero = confirm(`¿Eliminar al Superhéroe: ${nameHero}?`);
+
+          if (eliminarHero) {
+            try {
+              const response = await fetch(
+                `/api/heroes/delete-by-id/${heroeID}`,
+                {
+                  method: "DELETE",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                }
+              );
+
+              if (!response.ok) {
+                throw new Error("Error en la eliminación");
+              }
+
+              // Recargar la página después de eliminar
+              location.reload();
+            } catch (error) {
+              console.error("Error al eliminar el superhéroe:", error);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

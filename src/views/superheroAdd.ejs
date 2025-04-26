@@ -1,0 +1,99 @@
+<section id="seccion-agregar-superheroes">
+  <h1>Agrega un nuevo Superhéroe</h1>
+  <div class="form-add-superheroe">
+    <form action="/api/heroes/hero-add" method="post" id="form-add-superheroe">
+      <div class="add-campo">
+        <label for="nombreSuperHeroe">Nombre Superhéroe</label>
+        <input
+          name="nombreSuperHeroe"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          required
+        />
+      </div>
+      <div class="add-campo">
+        <label for="nombreReal">Nombre Real</label>
+        <input
+          name="nombreReal"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          required
+        />
+      </div>
+      <div class="add-campo">
+        <label for="edad">Edad</label>
+        <input name="edad" type="number" min="1" required />
+      </div>
+      <div class="add-campo">
+        <label for="planetaOrigen">Planeta de Orígen</label>
+        <input
+          name="planetaOrigen"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          required
+        />
+      </div>
+      <div class="add-campo">
+        <label for="debilidad">Debilidad</label>
+        <input
+          name="debilidad"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+        />
+      </div>
+      <div class="add-campo">
+        <label for="poderes">Poderes</label>
+        <textarea
+          name="poderes"
+          cols="60"
+          rows="3"
+          minlength="3"
+          maxlength="180"
+          placeholder="Si agregas mas de un poder separalos con una coma (,)"
+        ></textarea>
+      </div>
+      <div class="add-campo">
+        <label for="aliados">Aliados</label>
+        <textarea
+          name="aliados"
+          cols="60"
+          rows="3"
+          minlength="3"
+          maxlength="180"
+          placeholder="Si agregas mas de un aliado separalos con una coma (,)"
+        ></textarea>
+      </div>
+      <div class="add-campo">
+        <label for="enemigos">Enemigos</label>
+        <textarea
+          name="enemigos"
+          cols="60"
+          rows="3"
+          minlength="3"
+          maxlength="180"
+          placeholder="Si agregas mas de un enemigo separalos con una coma (,)"
+        ></textarea>
+      </div>
+      <div class="add-campo">
+        <label for="creador">Creador</label>
+        <input
+          name="creador"
+          type="text"
+          required
+          size="60"
+          minlength="3"
+          maxlength="60"
+        />
+      </div>
+      <button type="submit" class="btn-add-hero">Agregar Superhéroe</button>
+    </form>
+  </div>
+</section>

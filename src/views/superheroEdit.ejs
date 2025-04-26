@@ -1,0 +1,114 @@
+<section id="seccion-modificar-superheroes">
+  <h1>Editando al Superhéroe "<%= superheroeEditable.nombreSuperHeroe %>"</h1>
+  <div class="form-modificar-superheroe">
+    <form
+      action="http://localhost:3000/api/heroes/heroe-update?_method=PUT"
+      method="post"
+    >
+      <input type="hidden" name="id" value="<%= superheroeEditable._id %>" />
+      <div class="campo-modificar">
+        <label for="nombreSuperHeroe">Nombre Superhéroe</label>
+        <input
+          name="nombreSuperHeroe"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          value="<%= superheroeEditable.nombreSuperHeroe %>"
+          required
+        />
+      </div>
+      <div class="campo-modificar">
+        <label for="nombreReal">Nombre Real</label>
+        <input
+          name="nombreReal"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          required
+          value="<%=  superheroeEditable.nombreReal %>"
+        />
+      </div>
+      <div class="campo-modificar">
+        <label for="edad">Edad</label>
+        <input
+          name="edad"
+          type="number"
+          size="6"
+          min="1"
+          required
+          value="<%= superheroeEditable.edad %>"
+        />
+      </div>
+      <div class="campo-modificar">
+        <label for="planetaOrigen">Planeta de Orígen</label>
+        <input
+          name="planetaOrigen"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          required
+          value="<%= superheroeEditable.planetaOrigen %>"
+        />
+      </div>
+      <div class="campo-modificar">
+        <label for="debilidad">Debilidad</label>
+        <input
+          name="debilidad"
+          type="text"
+          size="60"
+          minlength="3"
+          maxlength="60"
+          value="<%= superheroeEditable.debilidad %>"
+        />
+      </div>
+      <div class="campo-modificar">
+        <label for="poderes">Poderes</label>
+        <textarea
+          name="poderes"
+          cols="60"
+          rows="3"
+          minlength="3"
+          maxlength="180"
+          placeholder="Si agregas mas de un poder separalos con una coma (,)"
+        ><%= superheroeEditable.poderes.join(', ') %></textarea>
+      </div>
+      <div class="campo-modificar">
+        <label for="aliados">Aliados</label>
+        <textarea
+          name="aliados"
+          cols="60"
+          rows="3"
+          minlength="3"
+          maxlength="180"
+          placeholder="Si agregas mas de un aliado separalos con una coma (,)"
+        ><%= superheroeEditable.aliados.join(', ') %></textarea>
+      </div>
+      <div class="campo-modificar">
+        <label for="enemigos">Enemigos</label>
+        <textarea
+          name="enemigos"
+          cols="60"
+          rows="3"
+          minlength="3"
+          maxlength="180"
+        ><%= superheroeEditable.enemigos.join(', ') %></textarea>
+      </div>
+      <div class="campo-modificar">
+        <label for="creador">Creador</label>
+        <input
+          name="creador"
+          type="text"
+          size="60"
+          required
+          minlength="3"
+          maxlength="60"
+          value="<%= superheroeEditable.creador %>"
+        />
+      </div>
+      <button type="submit" class="btn-modificar-hero">Guardar Cambios</button>
+    </form>
+  </div>
+</section>

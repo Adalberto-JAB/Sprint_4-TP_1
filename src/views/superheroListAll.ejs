@@ -1,0 +1,32 @@
+<section id="seccion-lista-superheroes" class="clase-secciones">
+  <h1>Lista de Superhéroes</h1>
+  <div class="grid-lista-superheroes">
+    <% if (superheroesFormateados.length > 0) {
+    superheroesFormateados.forEach(superheroe => { %>
+    <div class="card-lista-superheroes">
+      <div class="card-content-lista-superheroes">
+        <h2><%= superheroe.Nombre %></h2>
+        <P><strong>Nombre Real:</strong> <%= superheroe["Nombre Real"] %></P>
+        <P><strong>Edad:</strong> <%= superheroe.Edad %></P>
+        <P><strong>Planeta de Origen:</strong> <%= superheroe["Planeta de Origen"] %></P>
+        <P><strong>Debilidad:</strong> <%= superheroe.Debilidad %></P>
+        <P><strong>Poderes:</strong> <%= superheroe.Poderes.join(', ') %></P>
+        <p><strong>Aliados:</strong> <%= superheroe.Aliados.join(', ') %></p>
+        <p><strong>Enemigos:</strong> <%= superheroe.Enemigos.join(', ') %></p>
+        <p><strong>Agregado por:</strong> <%= superheroe["Agregado por"] %></p>
+      </div>
+      <div class="btn-contenedor">
+        <button class="btn-modificar"><a href="/api/formularios/heroe-update/<%= superheroe.id %>" class="a-modificar" >Modificar</a></button>
+        
+        <!-- eliminar -->
+        <form action="/api/heroes/delete-by-id/<%= superheroe.id %>?_method=DELETE" method="POST" class="form-eliminar" onsubmit="return confirmDelete()">
+
+          <button type="submit" class="btn-eliminar">Eliminar</button>
+        </form>
+      </div>
+    </div>
+    <% }); } else { %>
+    <p>No hay superhéroes registrados.</p>
+    <% } %>
+  </div>
+</section>

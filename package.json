@@ -1,0 +1,32 @@
+{
+  "name": "sprint_3-tp_1",
+  "version": "1.0.0",
+  "description": "Trabajo Práctico N° 1 del Sprint 3, del modulo 3 del Nodo Tecnológico",
+  "keywords": [
+    "NodeJS",
+    "MongoDB"
+  ],
+  "homepage": "https://github.com/Adalberto-JAB/Sprint_3-TP_1#readme",
+  "bugs": {
+    "url": "https://github.com/Adalberto-JAB/Sprint_3-TP_1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adalberto-JAB/Sprint_3-TP_1.git"
+  },
+  "license": "ISC",
+  "author": "Borquez",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "serv": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-validator": "^7.2.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.12.1"
+  }
+}
